@@ -1,45 +1,93 @@
-# Express API Starter
+API de controle do estudante!
+=============================
 
-Includes API Server utilities:
+Como usar:
+----------
 
-* [morgan](https://www.npmjs.com/package/morgan)
-  * HTTP request logger middleware for node.js
-* [helmet](https://www.npmjs.com/package/helmet)
-  * Helmet helps you secure your Express apps by setting various HTTP headers. It's not a silver bullet, but it can help!
-* [dotenv](https://www.npmjs.com/package/dotenv)
-  * Dotenv is a zero-dependency module that loads environment variables from a `.env` file into `process.env`
+-   ### Alunos
 
-Development utilities:
+    Endpoint: [/alunos](/alunos)
 
-* [nodemon](https://www.npmjs.com/package/nodemon)
-  * nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
-* [eslint](https://www.npmjs.com/package/eslint)
-  * ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
-* [mocha](https://www.npmjs.com/package/mocha)
-  * ☕️ Simple, flexible, fun JavaScript test framework for Node.js & The Browser ☕️
-* [supertest](https://www.npmjs.com/package/supertest)
-  * HTTP assertions made easy via superagent.
+    -   #### Criar um Aluno
 
-## Setup
+        Para criar um aluno basta passar o "nome" e "idade" como
+        parâmetros
 
-```
-npm install
-```
+        Endpoint:
+        [/alunos/criar?nome=Lucas&idade=18](/alunos/criar?nome=Lucas&idade=18)
 
-## Lint
+    -   #### Alterar um Aluno
 
-```
-npm run lint
-```
+        Para alterar um aluno basta passar o "nome" do aluno e a nova
+        "idade" dele
 
-## Test
+        Endpoint:
+        [/alunos/alterar?nome=Lucas&idade=20](/alunos/alterar?nome=Lucas&idade=20)
 
-```
-npm run test
-```
+    -   #### Adicionar nota a um Aluno
 
-## Development
+        Para adicioanr uma nota a um aluno deve-se passar o "nome" do
+        aluno, a "materia" e a "nota" do aluno nesta matéria
 
-```
-npm run dev
-```
+        São permitidas apenas 4 notas por aluno
+
+        Endpoint:
+        [/alunos/nota-materia?nome=Lucas&materia=Geografia&nota=60](/alunos/nota-materia?nome=Lucas&materia=Geografia&nota=60)
+
+    -   #### Deletar um Aluno
+
+        Para deletar um aluno basta passar o "nome" do aluno
+
+        Endpoint:
+        [/alunos/deletar?nome=Lucas](/alunos/deletar?nome=Lucas)
+
+    -   #### Listar os Alunos
+
+        Este serviço lista todos os alunos cadastrados
+
+        Endpoint: [/alunos/listar](/alunos/listar)
+
+-   ### Disciplinas
+
+    Endpoint: [/disciplinas](/disciplinas)
+
+    -   #### Criar uma Disciplina
+
+        Para criar uma disciplina deve-se passar o "nome" e "professor"
+        da disciplina
+
+        Endpoint:
+        [/disciplinas/criar?nome=Filosofia&professor=Marcos](/disciplinas/criar?nome=Filosofia&professor=Marcos)
+
+    -   #### Alterar uma Disciplina
+
+        Para alterar uma disciplina deve-se passar o "nome" dela e o
+        novo "professor"
+
+        Endpoint:
+        [/disciplinas/alterar?nome=Filosofia&professor=Pedro](/disciplinas/alterar?nome=Filosofia&professor=Pedro)
+
+    -   #### Deletar uma Disciplina
+
+        Para deletar uma disciplina deve-se passar apenas o "nome" da
+        disciplina
+
+        Endpoint:
+        [/disciplinas/deletar?nome=Filosofia](/disciplinas/deletar?nome=Filosofia)
+
+    -   #### Listar as Disciplinas
+
+        Este serviço lista todas as disciplinas cadastradas
+
+        Endpoint: [/disciplinas/listar](/disciplinas/listar)
+
+-   ### Relatório
+
+    Este serviço gera um relatório de todos os alunos e o desempenho em
+    cada matéria
+
+    Nota avaliada da forma "60 é 100!"
+
+    Endpoint: [/relatorio](/relatorio)
+
+
