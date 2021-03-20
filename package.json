@@ -1,7 +1,7 @@
 {
-  "name": "express-api-starter",
-  "version": "1.2.0",
-  "description": " A basic starter for an express.js API",
+  "name": "projeto1-ASA",
+  "version": "1.0.0",
+  "description": "A simple tracker for student's subject and grades",
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
@@ -10,10 +10,10 @@
     "test": "mocha --exit"
   },
   "keywords": [],
-  "author": "CJ R. <cj@null.computer> (https://w3cj.now.sh)",
+  "author": "Samuel G. <samuelgadiel@gmail.com> (https://github.com/SamuelGadiel)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/w3cj/express-api-starter.git"
+    "url": "https://github.com/SamuelGadiel/controle-estudante"
   },
   "license": "MIT",
   "dependencies": {

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://ez-css.now.sh/">
+  <title>API do estudante</title>
+</head>
+
+<body>
+  <h1>API de controle do estudante!</h1>
+  <h2>Como usar:</h2>
+  <ul>
+    <li>
+      <h3>Alunos</h3>
+      <p>Endpoint: <a href="/alunos">/alunos</a></p>
+      <ul>
+
+        <li>
+          <h4>Criar um Aluno</h4>
+          <p>Para criar um aluno basta passar o "nome" e "idade" como parâmetros</p>
+          <p>Endpoint: <a href="/alunos/criar?nome=Lucas&idade=18">/alunos/criar?nome=Lucas&idade=18</a></p>
+        </li>
+        <li>
+          <h4>Alterar um Aluno</h4>
+          <p>Para alterar um aluno basta passar o "nome" do aluno e a nova "idade" dele</p>
+          <p>Endpoint: <a href="/alunos/alterar?nome=Lucas&idade=20">/alunos/alterar?nome=Lucas&idade=20</a></p>
+        </li>
+        <li>
+          <h4>Adicionar nota a um Aluno</h4>
+          <p>Para adicioanr uma nota a um aluno deve-se passar o "nome" do aluno, a "materia" e a "nota" do aluno nesta matéria</p>
+          <p>São permitidas apenas 4 notas por aluno</p>
+          <p>Endpoint: <a href="/alunos/nota-materia?nome=Lucas&materia=Geografia&nota=60">/alunos/nota-materia?nome=Lucas&materia=Geografia& nota=60</a></p>
+        </li>
+        <li>
+          <h4>Deletar um Aluno</h4>
+          <p>Para deletar um aluno basta passar o "nome" do aluno</p>
+          <p>Endpoint: <a href="/alunos/deletar?nome=Lucas">/alunos/deletar?nome=Lucas</a></p>
+        </li>
+        <li>
+          <h4>Listar os Alunos</h4>
+          <p>Este serviço lista todos os alunos cadastrados</p>
+          <p>Endpoint: <a href="/alunos/listar">/alunos/listar</a></p>
+        </li>
+
+      </ul>
+    </li>
+
+    <li>
+      <h3>Disciplinas</h3>
+      <p>Endpoint: <a href="/disciplinas">/disciplinas</a></p>
+      <ul>
+        
+        <li>
+          <h4>Criar uma Disciplina</h4>
+          <p>Para criar uma disciplina deve-se passar o "nome" e "professor" da disciplina</p>
+          <p>Endpoint: <a href="/disciplinas/criar?nome=Filosofia&professor=Marcos">/disciplinas/criar?nome=Filosofia&professor=Marcos</a></p>
+        </li>
+        <li>
+          <h4>Alterar uma Disciplina</h4>
+          <p>Para alterar uma disciplina deve-se passar o "nome" dela e o novo "professor"</p>
+          <p>Endpoint: <a href="/disciplinas/alterar?nome=Filosofia&professor=Pedro">/disciplinas/alterar?nome=Filosofia&professor=Pedro</a></p>
+        </li>
+        <li>
+          <h4>Deletar uma Disciplina</h4>
+          <p>Para deletar uma disciplina deve-se passar apenas o "nome" da disciplina</p>
+          <p>Endpoint: <a href="/disciplinas/deletar?nome=Filosofia">/disciplinas/deletar?nome=Filosofia</a></p>
+        </li>
+        <li>
+          <h4>Listar as Disciplinas</h4>
+          <p>Este serviço lista todas as disciplinas cadastradas</p>
+          <p>Endpoint: <a href="/disciplinas/listar">/disciplinas/listar</a></p>
+        </li>
+
+      </ul>
+    </li>
+
+    <li>
+      <h3>Relatório</h3>
+      <p>Este serviço gera um relatório de todos os alunos e o desempenho em cada matéria</p>
+      <p>Nota avaliada da forma "60 é 100!"</p>
+      <p>Endpoint: <a href="/relatorio">/relatorio</a></p>
+    </li>
+  </ul>
+    
+</body>
+
+</html>

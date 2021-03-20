@@ -7,6 +7,9 @@ require('dotenv').config();
 
 const middlewares = require('./middlewares');
 const api = require('./api');
+const alunos = require('./alunos');
+const disciplinas = require('./disciplinas');
+const relatorio = require('./relatorio');
 
 const app = express();
 
@@ -16,12 +19,13 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.json({
-    message: '🦄🌈✨👋🌎🌍🌏✨🌈🦄'
-  });
+  res.sendFile(__dirname + "/app.html");
 });
 
 app.use('/api/v1', api);
+app.use('/alunos', alunos);
+app.use('/disciplinas', disciplinas);
+app.use('/relatorio', relatorio);
 
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
