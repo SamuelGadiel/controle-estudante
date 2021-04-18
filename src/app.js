@@ -6,10 +6,10 @@ const cors = require('cors');
 require('dotenv').config();
 
 const middlewares = require('./middlewares');
-const api = require('./api');
-const alunos = require('./alunos');
-const disciplinas = require('./disciplinas');
-const relatorio = require('./relatorio');
+
+const alunos = require('./alunos')
+const disciplinas = require('./disciplinas')
+const relatorio = require('./relatorio')
 
 const app = express();
 
@@ -22,7 +22,6 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + "/app.html");
 });
 
-app.use('/api/v1', api);
 app.use('/alunos', alunos);
 app.use('/disciplinas', disciplinas);
 app.use('/relatorio', relatorio);

@@ -1,29 +1,39 @@
 const express = require('express');
 const router = express.Router();
 
-const alunos = require('../alunos/alunos.json');
+const Joi = require('@hapi/joi');
+const monk = require('monk');
 
-analyzeGrades = () => {
+const { MONGO_URL } = require('../env');
 
-  alunos.forEach((aluno) => {
+// Conectando ao mongo e pegando a coleção "alunos"
+const db = monk(MONGO_URL);
+const alunosDB = db.get('alunos');
 
-    if (aluno.notas.length > 0) {
+// Lista todos os alunos cadastrados
+router.get('/', async (req, res, next) => {
+  try {
+    const alunos = await alunosDB.find({});
 
-      aluno.notas.forEach(item => {
-        parseFloat(item.nota) >= 60.0 ? item.resultado = "Aprovado" : item.resultado = "Reprovado";
-      });
+    alunos.forEach((aluno) => {
 
-    }
+      if (aluno.notas) {
 
-  });
+        aluno.notas.forEach(materia => {
+          parseFloat(materia.nota) >= 60.0
+            ? materia.resultado = "Aprovado"
+            : materia.resultado = "Reprovado";
+        });
 
-}
+      }
 
-router.get('/', (req, res) => {
-  analyzeGrades();
+    });
 
-  res.json(alunos);
+    res.json(alunos);
 
+  } catch (error) {
+    next(error);
+  }
 });
 
 module.exports = router;
